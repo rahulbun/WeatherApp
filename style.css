@@ -1,0 +1,208 @@
+/* Student Name: Rahul Dev Banjara
+   Student I.D: 2407061*/
+
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body background color */
+body {
+  background-color: #477aa7; 
+}
+
+.title{
+    text-align: center;
+    height:5vh;
+    padding-top: 5px;
+    color:#fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Container Styles */
+.container {
+  background: url("https://i.pinimg.com/564x/e4/e6/45/e4e64583345fcc2b6d1d23aa7cb5963a.jpg"); /* Container background image */
+  color: #fff; /* Text color */
+  padding: 2rem; /* Padding inside the container */
+  width: 40%; /* Container width */
+  margin: 3rem auto; /* Margin and centering */
+  margin-top: 1rem;
+  border-radius: 10px; /* Container border radius */
+  border: 2px solid white; /* Container border */
+  transition: 0.3s ease-in-out;
+}
+
+/*Mouse over effect on the container div*/
+.container:hover {
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5); /* Hover effect shadow */
+}
+
+/* Header Styles */
+.weather__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Input Styles */
+input {
+  border: none; /* Input border */
+  background: #477aa7; /* Input background color */
+  outline: none; /* Input outline */
+  color: #fff; /* Text color */
+  padding: 0.5rem 2.5rem; /* Input padding */
+  border-radius: 5px; /* Input border radius */
+}
+
+/*mouse over effect on the input field */
+input:hover {
+  background: #6fa5d8; /* Hover effect color */
+}
+
+input::placeholder {
+  color: #fff; /* Placeholder text color */
+}
+
+/* Search Styles */
+.weather__search {
+  position: relative;
+}
+
+/* Customizing icon */
+.weather__search i {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 15px;
+  color: #fff; /* Icon color */
+  cursor: pointer;
+}
+
+.weather__search i:hover {
+  color: #6fa5d8; /* Hover effect color */
+}
+
+/* Date and Time Styles */
+.weather__datetime {
+  margin-bottom: 0rem;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+
+.weather__datetime:hover {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.637);
+}
+
+/* Body Styles */
+.weather__body {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Forecast Styles */
+.weather__forecast {
+  background: #477aa7;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  transition: 0.3s ease-in-out; /* Transition effect */
+}
+
+.weather__forecast:hover {
+  background: #6fa5d8; /* Hover effect color */
+}
+
+/* Icon Styles */
+.weather__icon img {
+  width: 100px; /* Icon width */
+}
+
+/* Temperature Styles */
+.weather__temperature {
+  font-size: 4em;
+  margin-left: 20px;
+  transition: color 0.3s ease-in-out; /* Transition effect */
+}
+
+.weather__temperature:hover {
+  color: #6fa5d8; /* Hover effect color */
+}
+
+/* Info Section Styles */
+.weather__info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin-top: 3rem;
+}
+
+.weather__city {
+  margin-bottom: 10px;
+}
+
+.country {
+  font-size: 1.5em;
+}
+
+/* Weather Card Styles */
+.weather__card {
+  display: flex;
+  align-items: center;
+  background: #477aa7;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 70%;
+  margin-left: 40px;
+  transition: 0.3s ease-in-out; /* Transition effect */
+}
+
+.weather__card:hover {
+  background: #6fa5d8; /* Hover effect color */
+  transform: scale(1.05); /* Hover effect scale */
+}
+
+.weather__card i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.weather__card p {
+  font-size: 14px;
+}
+
+footer.copyright {
+  background-color: #477aa7;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 936px) {
+  .container {
+    width: 90%; /* Adjusted width for smaller screens */
+  }
+
+  .weather__header {
+    flex-direction: column;
+  }
+
+  .weather__units {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .weather__info {
+    grid-template-columns: none;
+  }
+}
