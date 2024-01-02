@@ -1,11 +1,11 @@
+
 /* Student Name: Rahul Dev Banjara
    Student I.D: 2407061*/
 
 // API key for OpenWeatherMap
 const apiKey = "145c5f5cc7b6719079c76a215871e298";
 // API URL for fetching weather data
-const apiUrl =
-  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiUrl ="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
 // Event listener for DOMContentLoaded to trigger weather check for the default city
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,11 +34,38 @@ async function checkWeather(city) {
   // Fetch weather data from OpenWeatherMap API
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
   const data = await response.json();
-
-  // Log the received icon code to the console
-  console.log("Icon Code:", data.weather[0].icon);
-  // Log the entire weather data to the console
   console.log(data);
+
+
+  /// Convert Unix timestamp to date components
+  let unixTimestamp = data.dt;
+
+  // Create a new Date object and multiply the timestamp by 1000
+  let date = new Date(unixTimestamp * 1000);
+
+  // Get the day of the week (0-6, where 0 is Sunday and 6 is Saturday)
+  let dayOfWeek = date.getDay();
+
+  // Create an array of days to map the day of the week
+  let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  // Format the date as a string
+  let formattedDate = date.toLocaleDateString();
+  let dateComponents = formattedDate.split('/');
+
+  // Get the weekday name based on the day of the week
+  let weekday = daysOfWeek[dayOfWeek];
+
+  // Define an array of month names
+  const allmonths = [
+    "January", "February", "March", "April",
+    "May", "June", "July", "August",
+    "September", "October", "November", "December"
+  ];
+
+  // Get the month name based on the month component
+  let month = allmonths[dateComponents[0] - 1];
+
 
   // Set weather icon based on the received icon code
   if (data.weather[0].icon == "01d") {
@@ -101,6 +128,7 @@ async function checkWeather(city) {
   document.querySelector(".weather__humidity").innerHTML = `${parseInt(
     data.main.humidity
   )}%`;
+  document.querySelector(".weather__datetime").innerHTML = `${weekday},   ${dateComponents[1]} ${month},${dateComponents[2]}`
 }
 
 // Event listener for search button click
