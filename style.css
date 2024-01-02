@@ -109,16 +109,18 @@ input::placeholder {
 
 /* Forecast Styles */
 .weather__forecast {
-  background: #477aa7;
-  display: inline-block;
+  /* background: #477aa7; */
+  font-size: 1.5rem;
+  /* display: inline-block; */
   padding: 0.5rem 1rem;
   border-radius: 30px;
   transition: 0.3s ease-in-out; /* Transition effect */
 }
 
 .weather__forecast:hover {
-  background: #6fa5d8; /* Hover effect color */
+  color: #6fa5d8; /* Hover effect color */
 }
+
 
 /* Icon Styles */
 .weather__icon img {
