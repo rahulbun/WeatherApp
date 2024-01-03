@@ -148,3 +148,10 @@ searchBtn.addEventListener("click", () => {
   // Clear the search input field
   searchForm.value = "";
 });
+
+searchForm.addEventListener('keyup', (e)=>{
+  // console.log(e.key)
+  if (e.key==="Enter"){
+      checkWeather(searchForm.value);
+  }
+})
