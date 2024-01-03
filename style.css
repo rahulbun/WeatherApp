@@ -27,6 +27,7 @@ body {
     font-weight: 600;
 }
 
+
 /* Container Styles */
 .container {
   background: url("https://i.pinimg.com/564x/e4/e6/45/e4e64583345fcc2b6d1d23aa7cb5963a.jpg"); /* Container background image */
@@ -91,15 +92,19 @@ input::placeholder {
 }
 
 /* Date and Time Styles */
-.weather__datetime {
+.weather__date,.weather__time {
   margin-bottom: 0rem;
   font-size: 14px;
   transition: 0.2s ease-in-out;
 }
 
-.weather__datetime:hover {
+.weather__time:hover {
   text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.637);
 }
+.weather__date:hover{
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.637);
+}
+
 
 /* Body Styles */
 .weather__body {
