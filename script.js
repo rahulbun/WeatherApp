@@ -135,11 +135,9 @@ async function checkWeather(city) {
   )}%`;
   document.querySelector(".weather__datetime").innerHTML = `${weekday},   ${dateComponents[1]} ${month},${dateComponents[2]}`
   } catch (error) {
-    if (error.message === "Not Found") {
-      alert("City not found. Please enter a valid city name.");
-    } else {
+    
       alert("An error occurred. Please try again later.");
-    }
+  
   }
 }
 
