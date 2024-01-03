@@ -31,11 +31,16 @@ const weather__icon = document.querySelector(".weather__icon");
 
 // Function to check weather for a given city
 async function checkWeather(city) {
-  // Fetch weather data from OpenWeatherMap API
+  try {
+    // Fetch weather data from OpenWeatherMap API
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
   const data = await response.json();
-  console.log(data);
 
+  console.log(data)
+  if (data.cod && data.cod==404){
+    alert("City Not found")
+    return;
+  }
 
   /// Convert Unix timestamp to date components
   let unixTimestamp = data.dt;
@@ -129,6 +134,13 @@ async function checkWeather(city) {
     data.main.humidity
   )}%`;
   document.querySelector(".weather__datetime").innerHTML = `${weekday},   ${dateComponents[1]} ${month},${dateComponents[2]}`
+  } catch (error) {
+    if (error.message === "Not Found") {
+      alert("City not found. Please enter a valid city name.");
+    } else {
+      alert("An error occurred. Please try again later.");
+    }
+  }
 }
 
 // Event listener for search button click
